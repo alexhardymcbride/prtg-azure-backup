@@ -12,7 +12,7 @@ To use this script with your PRTG installation, follow these steps:
 3. Install the AzureRM powershell module in Powershell (x86) on the probe server.
 4. Create a device in PRTG (use any value for the hostname field, it won't be used by this sensor), then add a new "EXE/Script Advanced" sensor.
 5. From the EXE/Script dropdown, choose "asrbackupstatus.ps1".
-6. In the Parameters section, insert the text "-$AccountName %linuxuser -Vault *Recovery Services Vault Name* -PW %linuxpassword".
+6. In the Parameters section, insert the text "-$AccountName %linuxuser -Vault *Recovery Services Vault Name* -PW %linuxpassword" -TenantID *Tenant Directory ID*.
 7. Configure a Service Principal in Azure with at least "Reader" permissions on the Recovery Services Vault. Save the application id in the Linux "User" credentials field in PRTG, and a valid key in  the Linux "Password" field.
 8. Save the lookups file "prtg.customlookups.azure.backupjobstatus.ovl" in the %prtginstalldir%\lookups\custom\ directory on your PRTG core server.
 9. On PRTG's Administrative Tools page, click the "Load Lookups" button. 
